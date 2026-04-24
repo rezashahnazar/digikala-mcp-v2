@@ -51,7 +51,7 @@ sequenceDiagram
   participant Client as MCP client
   participant Server as digikala-mcp server
   participant DK as Digikala API
-  Host->>Client: user asks; model may request a tool
+  Host->>Client: user asks, model may request a tool
   Client->>Server: JSON-RPC request tools/call
   Server->>DK: HTTPS JSON product search
   DK-->>Server: product JSON
