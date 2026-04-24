@@ -1,0 +1,49 @@
+{
+  "name": "digikala-discovery-mcp-server",
+  "version": "2.0.0",
+  "description": "Digikala discovery MCP server — search and product tools for AI assistants (stdio + Streamable HTTP)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rezashahnazar/digikala-mcp-v2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rezashahnazar/digikala-mcp-v2/issues"
+  },
+  "homepage": "https://github.com/rezashahnazar/digikala-mcp-v2#readme",
+  "type": "module",
+  "main": "dist/cli.js",
+  "bin": {
+    "digikala-mcp": "dist/cli.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/cli.ts",
+    "dev:http": "tsx src/cli.ts http",
+    "start:stdio": "node dist/cli.js stdio",
+    "start:http": "node dist/cli.js http",
+    "test": "node --import tsx --test src/**/*.test.ts",
+    "test:unit": "node --import tsx --test src/digikala/sort-utils.test.ts src/digikala/validation.test.ts src/mcp/create-server.test.ts src/mcp/bearer-auth.test.ts src/transports/streamable-http.bearer.test.ts",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.0.0"
+  },
+  "packageManager": "pnpm@10.15.0"
+}
